@@ -1,0 +1,307 @@
+/* /* =====================================================
+   MainPage.css
+   Converted from : main.css
+   ===================================================== */
+
+/* .main-page {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+
+.main-page::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('/images/backround_image.jpg') no-repeat center/cover;
+  z-index: -2;
+  animation: zoomBg 15s infinite alternate;
+}
+
+
+.main-page::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+  z-index: -1;
+}
+
+
+.main-page .navbar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.main-page .navbar button {
+  padding: 10px 22px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-page .navbar button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.main-page .orders-btn {
+  background: linear-gradient(45deg, #4caf50, #8bc34a);
+}
+
+.main-page .logout-btn {
+  background: linear-gradient(45deg, #f44336, #ff1744);
+}
+
+
+.main-page .overlay {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.main-page .overlay::before,
+.main-page .overlay::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  border-radius: 20px;
+  opacity: 0.8;
+}
+
+.main-page .overlay::before {
+  top: 20%;
+  left: 10%;
+  background-image: url('/images/back_burger.jpg');
+  animation: float 4s infinite ease-in-out;
+}
+
+.main-page .overlay::after {
+  bottom: 20%;
+  right: 10%;
+  background-image: url('/images/baack_pizza.jpg');
+  animation: float 5s infinite ease-in-out;
+}
+
+.main-page .overlay h1 {
+  color: white;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  animation: slideDown 1s ease;
+}
+
+.main-page .overlay p {
+  color: #eee;
+  font-size: 20px;
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease;
+}
+
+.main-page .overlay button {
+  padding: 15px 35px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #ff5722, #ff9800);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: fadeIn 2.5s ease;
+}
+
+.main-page .overlay button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(255,87,34,0.7);
+}
+
+
+@keyframes zoomBg {
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}  */
+
+/* =====================================================
+   MainPage.css  — Updated: added .profile-btn
+   ===================================================== */
+
+.main-page {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.main-page::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('/images/backround_image.jpg') no-repeat center/cover;
+  z-index: -2;
+  animation: zoomBg 15s infinite alternate;
+}
+
+.main-page::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+  z-index: -1;
+}
+
+/* ── Navbar ── */
+.main-page .navbar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.main-page .navbar button {
+  padding: 10px 22px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-page .navbar button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.main-page .orders-btn  { background: linear-gradient(45deg, #ff5722, #ff9800); }
+.main-page .profile-btn { background: linear-gradient(45deg, #ff5722, #ff9800); } /* NEW */
+.main-page .logout-btn  { background: linear-gradient(45deg, #f44336, #ff1744); }
+
+/* ── Overlay ── */
+.main-page .overlay {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-page .overlay::before,
+.main-page .overlay::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  border-radius: 20px;
+  opacity: 0.8;
+}
+
+.main-page .overlay::before {
+  top: 20%; left: 10%;
+  background-image: url('/images/back_burger.jpg');
+  animation: float 4s infinite ease-in-out;
+}
+
+.main-page .overlay::after {
+  bottom: 20%; right: 10%;
+  background-image: url('/images/baack_pizza.jpg');
+  animation: float 5s infinite ease-in-out;
+}
+
+.main-page .overlay h1 {
+  color: white;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  animation: slideDown 1s ease;
+}
+
+.main-page .overlay p {
+  color: #eee;
+  font-size: 20px;
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease;
+}
+
+.main-page .overlay button {
+  padding: 15px 35px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #ff5722, #ff9800);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: fadeIn 2.5s ease;
+}
+
+.main-page .overlay button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(255,87,34,0.7);
+}
+
+@keyframes zoomBg {
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
+}
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
+}
+
+

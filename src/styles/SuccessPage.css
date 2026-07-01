@@ -1,0 +1,364 @@
+/* 
+
+
+
+.success-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+
+.bg-animation::before,
+.bg-animation::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+.bg-animation::after {
+  width: 200px;
+  height: 200px;
+  left: 70%;
+  top: 60%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+
+.success-container {
+  z-index: 2;
+}
+
+
+.box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  width: 320px;
+
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  background: #4CAF50;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: bounce 1s ease;
+}
+
+.checkmark {
+  font-size: 40px;
+  color: white;
+}
+
+@keyframes bounce {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+.box h1 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.box p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+
+.box button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #ff7e5f;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.box button:hover {
+  background: #333;
+  color: white;
+  transform: scale(1.05);
+} */
+
+/* =====================================================
+   SuccessPage.css  —  Order Status Tracker
+   ===================================================== */
+
+.success-body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.success-card {
+  background: white;
+  border-radius: 24px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  animation: slideUp 0.4s ease both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.success-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.success-checkmark {
+  font-size: 56px;
+  margin-bottom: 10px;
+  animation: bounce 0.5s ease 0.3s both;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(0.5); }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.success-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.order-id {
+  font-size: 14px;
+  color: #888;
+}
+
+.order-id strong {
+  color: #ff4b2b;
+  font-weight: 700;
+}
+
+/* ── Progress bar ── */
+.progress-bar-wrap {
+  height: 6px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Steps ── */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.step:last-child { padding-bottom: 0; }
+
+/* Vertical connector line */
+.connector {
+  position: absolute;
+  left: 19px;
+  top: -24px;
+  width: 2px;
+  height: 24px;
+  background: #f0f0f0;
+  transition: background 0.5s;
+}
+
+.connector.done { background: #ff4b2b; }
+
+/* Step circle */
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  border: 2px solid #f0f0f0;
+  background: white;
+  transition: all 0.4s;
+  z-index: 1;
+}
+
+.step.done .step-circle {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border-color: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.step.active .step-circle {
+  background: white;
+  border-color: #ff4b2b;
+  border-width: 3px;
+  box-shadow: 0 0 0 4px rgba(255,75,43,0.15);
+  animation: pulse 1.5s infinite;
+}
+
+.step.pending .step-circle {
+  background: #fafafa;
+  border-color: #e0e0e0;
+  opacity: 0.5;
+}
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 4px rgba(255,75,43,0.15); }
+  50%      { box-shadow: 0 0 0 8px rgba(255,75,43,0.08); }
+}
+
+/* Step text */
+.step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 6px;
+}
+
+.step-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+.step.pending .step-label { color: #aaa; }
+.step.done    .step-label { color: #ff4b2b; }
+
+.step-desc {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Live indicator */
+.step-live {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ff4b2b;
+  margin-top: 3px;
+}
+
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #ff4b2b;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.2; }
+}
+
+/* ── ETA box ── */
+.eta-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff8f6;
+  border: 1px solid #ffe0d6;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.eta-box span { font-size: 28px; }
+
+.eta-title { font-weight: 600; color: #555; margin: 0; font-size: 13px; }
+.eta-time  { font-weight: 700; color: #ff4b2b; font-size: 16px; margin: 0; }
+
+/* ── Go Home button ── */
+.go-home-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.go-home-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(255,75,43,0.4);
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .success-card { padding: 24px 18px; }
+}

@@ -1,0 +1,240 @@
+/* =====================================================
+   darkmode.css
+   ✅ Dark mode applies to: Home, Orders, Profile, Success
+   ❌ Login page NOT touched — always stays light
+   ===================================================== */
+
+:root {
+  --bg-main:        linear-gradient(to right, #ffecd2, #fcb69f);
+  --bg-card:        white;
+  --bg-form:        white;
+  --bg-sidebar:     white;
+  --bg-input:       white;
+  --text-primary:   #222;
+  --text-secondary: #555;
+  --text-muted:     #888;
+  --shadow:         0 5px 15px rgba(0,0,0,0.2);
+}
+
+html.dark {
+  --bg-main:        linear-gradient(to right, #1a1a2e, #16213e);
+  --bg-card:        #1e1e2e;
+  --bg-form:        #1e1e2e;
+  --bg-sidebar:     #1e1e2e;
+  --bg-input:       #2a2a3e;
+  --text-primary:   #f0f0f0;
+  --text-secondary: #bbb;
+  --text-muted:     #888;
+  --shadow:         0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* ══ HOME PAGE ═══════════════════════════════════════ */
+html.dark .home-page { background: var(--bg-main); }
+
+html.dark .home-page .card {
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+  color: var(--text-primary);
+}
+
+html.dark .home-page .card h3      { color: var(--text-primary); }
+html.dark .home-page .card p       { color: #ff7961; }
+html.dark .home-page .card .calories { color: var(--text-muted); }
+
+html.dark .filter-bar { background: rgba(30,30,46,0.8); backdrop-filter: blur(10px); }
+html.dark .filter-group label { color: var(--text-secondary); }
+
+html.dark .sort-btn { background: #2a2a3e; border-color: #444; color: #ccc; }
+html.dark .sort-btn:hover { border-color: #ff7961; color: #ff7961; }
+
+html.dark .cat-tab { background: #2a2a3e; color: #ff7961; border-color: #ff7961; }
+html.dark .cat-tab.active {
+  background: linear-gradient(135deg, #c0392b, #922b21);
+  color: white;
+  border-color: transparent;
+}
+
+html.dark .result-count        { color: #aaa; }
+html.dark .result-count strong { color: #ff7961; }
+
+html.dark .home-page .popup .form-box {
+  background: var(--bg-form);
+  color: var(--text-primary);
+}
+
+html.dark .home-page .form-box input {
+  background: var(--bg-input);
+  border-color: #444;
+  color: var(--text-primary);
+}
+
+html.dark .home-page .form-box h2 { color: #ff7961; }
+
+html.dark .detail-box { background: var(--bg-form); color: var(--text-primary); }
+html.dark .detail-top h2 { color: #ff7961; }
+html.dark .detail-desc   { color: #aaa; }
+
+html.dark .stat-box { background: #2a2a3e; border-color: #444; }
+html.dark .stat-label { color: #888; }
+html.dark .stat-value { color: #eee; }
+
+html.dark .ingredient-tag {
+  background: #2a2a3e;
+  color: #ffb74d;
+  border-color: #444;
+}
+
+html.dark .ingredients-section h4 { color: #ddd; }
+
+html.dark .sidebar { background: var(--bg-sidebar); color: var(--text-primary); }
+html.dark .sidebar-item { background: #2a2a3e; }
+html.dark .si-name  { color: #eee; }
+html.dark .si-price { color: #aaa; }
+
+html.dark .cart-total-row { color: #eee; border-top-color: #333; }
+html.dark .checkout-summary { background: #2a2a3e; }
+html.dark .cs-row { color: #ccc; border-bottom-color: #444; }
+
+html.dark .checkout-form input,
+html.dark .checkout-form textarea {
+  background: var(--bg-input);
+  border-color: #444;
+  color: var(--text-primary);
+}
+
+html.dark .back-btn2 { background: #2a2a3e; color: #ff7961; border-color: #ff7961; }
+
+html.dark .no-result p     { color: #ff7961; }
+html.dark .no-result small { color: #666; }
+
+html.dark .info-btn { border-color: #444; color: #aaa; }
+html.dark .info-btn:hover { border-color: #ff7961; color: #ff7961; }
+
+html.dark .qty-controls      { background: #2a2a3e; }
+html.dark .qty-controls span { color: #eee; }
+html.dark .qty-btn           { background: #333; border-color: #555; color: #eee; }
+
+/* ══ ORDERS PAGE ═════════════════════════════════════ */
+html.dark .orders-body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+html.dark .orders-header h1 { color: #ff7961; }
+html.dark .table-wrapper,
+html.dark table { background: #1e1e2e; }
+html.dark thead th { background: #c0392b; }
+html.dark tbody td { color: #ccc; }
+html.dark tbody tr { border-bottom-color: #333; }
+html.dark tbody tr:hover { background: #2a2a3e; }
+html.dark .status-msg { color: #888; }
+html.dark .status-msg.error { color: #ef9a9a; }
+
+/* ══ PROFILE PAGE ════════════════════════════════════ */
+html.dark .profile-body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+html.dark .profile-card { background: #1e1e2e; color: var(--text-primary); }
+
+html.dark .profile-tabs .tab { background: #2a2a3e; color: #ff7961; border-color: #ff7961; }
+html.dark .profile-tabs .tab.active {
+  background: linear-gradient(135deg, #c0392b, #922b21);
+  color: white;
+  border-color: transparent;
+}
+
+html.dark .info-row     { background: #2a2a3e; border-left-color: #ff7961; }
+html.dark .info-label   { color: #888; }
+html.dark .info-value   { color: #eee; }
+html.dark .orders-count { color: #ff7961; }
+
+html.dark .profile-form input,
+html.dark .profile-form textarea {
+  background: var(--bg-input);
+  border-color: #444;
+  color: var(--text-primary);
+}
+
+html.dark .tab-content h2 { color: #ff7961; }
+html.dark .loading-text   { color: #888; }
+html.dark .msg.success { background: #1b3a1f; color: #81c784; }
+html.dark .msg.error   { background: #3e1a1a; color: #ef9a9a; }
+
+/* ══ SUCCESS PAGE ════════════════════════════════════ */
+html.dark .success-body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+html.dark .success-card { background: #1e1e2e; color: var(--text-primary); }
+
+/* ══ TOAST (dark adjustments) ════════════════════════ */
+html.dark .toast-success { background: #1b3a1f; color: #81c784; border-left-color: #43a047; }
+html.dark .toast-error   { background: #3e1a1a; color: #ef9a9a; border-left-color: #e53935; }
+html.dark .toast-info    { background: #0d2137; color: #90caf9; border-left-color: #1e88e5; }
+html.dark .toast-warning { background: #3e2a0d; color: #ffcc80; border-left-color: #fb8c00; }
+
+/* ══ LOGIN PAGE — INTENTIONALLY NOT INCLUDED ══════════
+   No html.dark overrides for .login-body, .login-body .right,
+   .login-body input, .login-body h2, .login-body button etc.
+   So the login page ALWAYS displays its original light design,
+   no matter whether dark mode is on or off.
+   ══════════════════════════════════════════════════════ */
+
+/* ══ ORDERS PAGE — CORRECT CLASSES (op- prefix) ══════ */
+html.dark .op-body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+
+html.dark .op-title { color: #f0f0f0; }
+html.dark .op-title-accent { color: #ff7961; }
+
+html.dark .op-back-btn {
+  background: #2a2a3e;
+  color: #ff7961;
+  border-color: #ff7961;
+}
+
+/* Skeleton loading cards */
+html.dark .op-skeleton-card {
+  background: #2a2a3e;
+}
+
+/* Error box */
+html.dark .op-error-box {
+  background: #3e1a1a;
+  color: #ef9a9a;
+}
+
+/* Summary strip */
+html.dark .op-summary {
+  background: #1e1e2e;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+html.dark .op-stat-label { color: #888; }
+html.dark .op-stat-val   { color: #eee; }
+html.dark .op-stat-amber { color: #ffb74d; }
+
+/* Search bar */
+html.dark .op-search-wrap {
+  background: #1e1e2e;
+  border-color: #444;
+}
+
+html.dark .op-search-input {
+  background: transparent;
+  color: #f0f0f0;
+}
+
+html.dark .op-search-input::placeholder { color: #777; }
+html.dark .op-search-icon  { color: #888; }
+html.dark .op-search-clear { color: #888; }
+
+/* Empty state */
+html.dark .op-empty-title { color: #ddd; }
+html.dark .op-empty-sub   { color: #888; }
+
+/* Order cards */
+html.dark .op-card {
+  background: #1e1e2e;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+html.dark .op-card-emoji {
+  background: #2a2a3e;
+}
+
+html.dark .op-card-product { color: #f0f0f0; }
+html.dark .op-card-meta span { color: #aaa; }
+html.dark .op-card-address { color: #999; }
+html.dark .op-card-total { color: #ff7961; }
+html.dark .op-card-qty { color: #888; }

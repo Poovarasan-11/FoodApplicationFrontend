@@ -1,0 +1,29 @@
+/* =====================================================
+   extra-buttons.css
+   Add this content to the BOTTOM of your existing
+   HomePage.css and MainPage.css files
+   (or keep as separate file and import it)
+   ===================================================== */
+
+/* ── Dark mode toggle button — HomePage navbar ── */
+.nav-icon-btn.dark-btn {
+  font-size: 18px;
+}
+
+/* ── Dark mode toggle button — MainPage navbar ── */
+.dark-toggle-btn {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(45deg, #607d8b, #455a64);
+  color: white;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
+}
+
+.dark-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}

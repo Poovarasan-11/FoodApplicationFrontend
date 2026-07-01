@@ -1,0 +1,147 @@
+/* =====================================================
+   LoginPage.css
+   Converted from : <style> block inside index.html
+   ===================================================== */
+
+.login-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+/* ── Card ── */
+.login-body .container {
+  display: flex;
+  width: 850px;
+  height: 480px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* ── Left image half ── */
+.login-body .left {
+  width: 50%;
+  background: url('/images/login-food.jpg') no-repeat center/cover;
+  position: relative;
+}
+
+.login-body .left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+}
+
+/* ── Right form half ── */
+.login-body .right {
+  width: 50%;
+  background: rgba(255,255,255,0.95);
+  padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.login-body .right::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+}
+
+/* ── Form elements ── */
+.login-body form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-body h2 {
+  text-align: center;
+  color: #ff3d57;
+  margin-bottom: 25px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.login-body input {
+  width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.25s;
+  background: #fafafa;
+}
+
+.login-body input:focus {
+  border-color: #ff3d57;
+  background: white;
+  box-shadow: 0 0 10px rgba(255,61,87,0.2);
+}
+
+.login-body button {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-body button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(221,36,118,0.3);
+}
+
+.login-body button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Toggle text link ── */
+.login-body .toggle {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ff3d57;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.login-body .toggle:hover {
+  color: #d81b60;
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 850px) {
+  .login-body .container {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+  .login-body .left {
+    width: 100%;
+    height: 220px;
+  }
+  .login-body .right {
+    width: 100%;
+    padding: 30px;
+  }
+}

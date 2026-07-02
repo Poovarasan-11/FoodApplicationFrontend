@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/LoginPage.css';
-import { useToast } from './ToastContext';
+import { useToast } from '../context/ToastContext';
 
 export default function LoginPage({ onLogin }) {
   const { showToast } = useToast();

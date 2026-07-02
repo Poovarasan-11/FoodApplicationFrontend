@@ -100,19 +100,21 @@ export default function LoginPage({ onLogin }) {
                   required
                   style={{ width: '100%', paddingRight: '35px', boxSizing: 'border-box' }}
                 />
-                <span
-                  onClick={() => setShowLoginPassword(!showLoginPassword)}
-                  style={{
-                    position: 'absolute',
-                    right: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    cursor: 'pointer',
-                    userSelect: 'none'
-                  }}
-                >
-                  {showLoginPassword ? '🙈' : '👁️'}
-                </span>
+                {loginPassword.length > 0 && (
+                  <span
+                    onClick={() => setShowLoginPassword(!showLoginPassword)}
+                    style={{
+                      position: 'absolute',
+                      right: '10px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      cursor: 'pointer',
+                      userSelect: 'none'
+                    }}
+                  >
+                    {showLoginPassword ? '🙈' : '👁️'}
+                  </span>
+                )}
               </div>
 
               <button type="submit" disabled={busy}>
@@ -151,19 +153,21 @@ export default function LoginPage({ onLogin }) {
                   required
                   style={{ width: '100%', paddingRight: '35px', boxSizing: 'border-box' }}
                 />
-                <span
-                  onClick={() => setShowRegPassword(!showRegPassword)}
-                  style={{
-                    position: 'absolute',
-                    right: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    cursor: 'pointer',
-                    userSelect: 'none'
-                  }}
-                >
-                  {showRegPassword ? '🙈' : '👁️'}
-                </span>
+                {regPassword.length > 0 && (
+                  <span
+                    onClick={() => setShowRegPassword(!showRegPassword)}
+                    style={{
+                      position: 'absolute',
+                      right: '10px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      cursor: 'pointer',
+                      userSelect: 'none'
+                    }}
+                  >
+                    {showRegPassword ? '🙈' : '👁️'}
+                  </span>
+                )}
               </div>
 
               <input

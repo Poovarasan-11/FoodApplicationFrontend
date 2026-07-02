@@ -12,6 +12,8 @@ export default function LoginPage({ onLogin }) {
   const [regPhone, setRegPhone] = useState('');
   const [regAddress, setRegAddress] = useState('');
 
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
+  const [showRegPassword, setShowRegPassword] = useState(false);
 
   const [busy, setBusy] = useState(false);
 
@@ -88,13 +90,30 @@ export default function LoginPage({ onLogin }) {
                 onChange={e => setLoginEmail(e.target.value)}
                 required
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={loginPassword}
-                onChange={e => setLoginPassword(e.target.value)}
-                required
-              />
+
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showLoginPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  value={loginPassword}
+                  onChange={e => setLoginPassword(e.target.value)}
+                  required
+                  style={{ width: '100%', paddingRight: '35px', boxSizing: 'border-box' }}
+                />
+                <span
+                  onClick={() => setShowLoginPassword(!showLoginPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: '10px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    cursor: 'pointer',
+                    userSelect: 'none'
+                  }}
+                >
+                  {showLoginPassword ? '🙈' : '👁️'}
+                </span>
+              </div>
 
               <button type="submit" disabled={busy}>
                 {busy ? 'Logging in…' : 'Login'}
@@ -122,13 +141,31 @@ export default function LoginPage({ onLogin }) {
                 onChange={e => setRegEmail(e.target.value)}
                 required
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={regPassword}
-                onChange={e => setRegPassword(e.target.value)}
-                required
-              />
+
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showRegPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  value={regPassword}
+                  onChange={e => setRegPassword(e.target.value)}
+                  required
+                  style={{ width: '100%', paddingRight: '35px', boxSizing: 'border-box' }}
+                />
+                <span
+                  onClick={() => setShowRegPassword(!showRegPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: '10px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    cursor: 'pointer',
+                    userSelect: 'none'
+                  }}
+                >
+                  {showRegPassword ? '🙈' : '👁️'}
+                </span>
+              </div>
+
               <input
                 type="tel"
                 placeholder="PhoneNumber"

@@ -17,7 +17,7 @@ export default function ProfilePage({ email, onBack, onLogout }) {
   const [passMsg,     setPassMsg]     = useState('');
   useEffect(() => {
     const mail = email || localStorage.getItem('emailId');
-    fetch(`http://localhost:8080/profile?email=${mail}`)
+    fetch(`https://foodapplicationbackend-production.up.railway.app/profile?email=${mail}`)
       .then(res => res.json())
       .then(data => {
         setProfile(data);
@@ -39,7 +39,7 @@ export default function ProfilePage({ email, onBack, onLogout }) {
     params.append('address', editAddress);
 
     try {
-      const res  = await fetch('http://localhost:8080/profile/update', {
+      const res  = await fetch('https://foodapplicationbackend-production.up.railway.app/profile/update', {
         method: 'POST', body: params,
       });
       const text = await res.text();
@@ -74,7 +74,7 @@ export default function ProfilePage({ email, onBack, onLogout }) {
     params.append('newPassword', newPass);
 
     try {
-      const res  = await fetch('http://localhost:8080/profile/changepassword', {
+      const res  = await fetch('https://foodapplicationbackend-production.up.railway.app/profile/changepassword', {
         method: 'POST', body: params,
       });
       const text = await res.text();

@@ -181,7 +181,7 @@ export default function HomePage({ onGoProfile, onSuccess }) {
         fd.append('quantity', item.qty);
         fd.append('address',  cartForm.address);
         fd.append('email',    cartForm.email);
-        const res  = await fetch('http://localhost:8080/orders', { method: 'POST', body: fd });
+        const res  = await fetch('https://foodapplicationbackend-production.up.railway.app/orders', { method: 'POST', body: fd });
         const data = await res.text();
         if (data !== 'Order succeefully') throw new Error();
       }
@@ -213,7 +213,7 @@ export default function HomePage({ onGoProfile, onSuccess }) {
     formData.append('address',  order.address);
     formData.append('email',    order.email);
     try {
-      const res  = await fetch('http://localhost:8080/orders', { method: 'POST', body: formData });
+      const res  = await fetch('https://foodapplicationbackend-production.up.railway.app/orders', { method: 'POST', body: formData });
       const data = await res.text();
       if (data === 'Order succeefully') { setPopup(false); onSuccess(); }
     } catch (err) { showToast('Error placing order ❌', 'error'); console.error(err); }

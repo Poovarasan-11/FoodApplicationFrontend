@@ -34,7 +34,7 @@ export default function OrdersPage({ email, onBack }) {
       return;
     }
 
-    fetch(`http://localhost:8080/myorders?email=${encodeURIComponent(mail)}`)
+    fetch(`https://foodapplicationbackend-production.up.railway.app/myorders?email=${encodeURIComponent(mail)}`)
       .then(res => {
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
         return res.json();

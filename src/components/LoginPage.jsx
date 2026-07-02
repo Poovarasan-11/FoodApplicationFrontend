@@ -19,7 +19,7 @@ export default function LoginPage({ onLogin }) {
     e.preventDefault();
     setBusy(true);
     try {
-      const res  = await fetch('http://localhost:8080/login', {
+      const res  = await fetch('https://foodapplicationbackend-production.up.railway.app/login', {
         method:  'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ emailId: loginEmail, password: loginPassword }),
@@ -53,7 +53,7 @@ export default function LoginPage({ onLogin }) {
       params.append('address', regAddress);
 
 
-      const res  = await fetch('http://localhost:8080/register', {
+      const res  = await fetch('https://foodapplicationbackend-production.up.railway.app/register', {
         method: 'POST',
         body:   params,
       });

@@ -12,6 +12,8 @@ export default function LoginPage({ onLogin }) {
   const [regPhone, setRegPhone] = useState('');
   const [regAddress, setRegAddress] = useState('');
 
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
+  const [showRegPassword, setShowRegPassword] = useState(false);
 
   const [busy, setBusy] = useState(false);
 
@@ -88,13 +90,48 @@ export default function LoginPage({ onLogin }) {
                 onChange={e => setLoginEmail(e.target.value)}
                 required
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={loginPassword}
-                onChange={e => setLoginPassword(e.target.value)}
-                required
-              />
+
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showLoginPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  value={loginPassword}
+                  onChange={e => setLoginPassword(e.target.value)}
+                  required
+                  style={{ width: '100%', paddingRight: '38px', boxSizing: 'border-box' }}
+                />
+                {loginPassword.length > 0 && (
+                  <span
+                    onClick={() => setShowLoginPassword(!showLoginPassword)}
+                    style={{
+                      position: 'absolute',
+                      right: '10px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      cursor: 'pointer',
+                      userSelect: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      color: '#9ca3af',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#e5384f')}
+                    onMouseLeave={e => (e.currentTarget.style.color = '#9ca3af')}
+                  >
+                    {showLoginPassword ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                        <line x1="1" y1="1" x2="23" y2="23" />
+                      </svg>
+                    ) : (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    )}
+                  </span>
+                )}
+              </div>
 
               <button type="submit" disabled={busy}>
                 {busy ? 'Logging in…' : 'Login'}
@@ -122,13 +159,49 @@ export default function LoginPage({ onLogin }) {
                 onChange={e => setRegEmail(e.target.value)}
                 required
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={regPassword}
-                onChange={e => setRegPassword(e.target.value)}
-                required
-              />
+
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showRegPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  value={regPassword}
+                  onChange={e => setRegPassword(e.target.value)}
+                  required
+                  style={{ width: '100%', paddingRight: '38px', boxSizing: 'border-box' }}
+                />
+                {regPassword.length > 0 && (
+                  <span
+                    onClick={() => setShowRegPassword(!showRegPassword)}
+                    style={{
+                      position: 'absolute',
+                      right: '10px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      cursor: 'pointer',
+                      userSelect: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      color: '#9ca3af',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#e5384f')}
+                    onMouseLeave={e => (e.currentTarget.style.color = '#9ca3af')}
+                  >
+                    {showRegPassword ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                        <line x1="1" y1="1" x2="23" y2="23" />
+                      </svg>
+                    ) : (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    )}
+                  </span>
+                )}
+              </div>
+
               <input
                 type="tel"
                 placeholder="PhoneNumber"

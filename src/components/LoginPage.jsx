@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import '../styles/LoginPage.css';
+import { useToast } from './ToastContext';
 
 export default function LoginPage({ onLogin }) {
+  const { showToast } = useToast();
   const [view, setView] = useState('login'); 
 
   const [loginEmail,    setLoginEmail]    = useState('');
@@ -29,17 +31,17 @@ export default function LoginPage({ onLogin }) {
       const text = await res.text();
 
       if (text === 'Success') {
-        alert('Login successfully');
+        showToast('Login successful! Welcome back 🎉', 'success');
         onLogin(loginEmail);                
       } else if (text === 'Invalid password') {
-        alert('Invalid password');
+        showToast('Invalid password', 'error');
       } else if (text === 'Invalid email') {
-        alert('Invalid email');
+        showToast('Invalid email', 'error');
       } else if (text === 'email not exits') {
-        alert('Email not found');
+        showToast('Email not found', 'error');
       }
     } catch {
-      alert('Cannot reach server. Make sure Spring Boot is running on :8080');
+      showToast('Cannot reach server. Please try again later.', 'error');
     }
     setBusy(false);
   }
@@ -62,12 +64,12 @@ export default function LoginPage({ onLogin }) {
       const text = await res.text();
 
       if (text === 'Added') {
-        alert('Register Successfully');
+        showToast('Registered successfully! Please login 🎉', 'success');
         setRegName(''); setRegEmail(''); setRegPassword('');
         setView('login');
       }
     } catch {
-      alert('Cannot reach server. Make sure Spring Boot is running on :8080');
+      showToast('Cannot reach server. Please try again later.', 'error');
     }
     setBusy(false);
   }
